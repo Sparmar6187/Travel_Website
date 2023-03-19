@@ -1,0 +1,26 @@
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/nav'); -%>
+  <section class="w50">
+    <form name="myform" method="Post" action="" >
+      <label for="username">Username: </label>
+      <input id="username" type="text" name="username"><br/>
+
+      <label for="password">Password: </label>
+      <input id="password" type="password" name="password"><br/>
+
+      <br/><br/>
+      <input type="submit" value="Login">
+      <p id="errors">
+        <%  if (typeof(error) != 'undefined')
+            {
+        %>
+                <%= error %>
+        <%
+            }
+        %>
+      </p>
+    </form>  
+</section>
+</body>
+<%- include('layouts/footer'); -%>
