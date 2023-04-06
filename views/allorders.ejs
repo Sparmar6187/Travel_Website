@@ -1,0 +1,46 @@
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/nav'); -%>
+  <section class="w50">
+    <a href="/logout">Logout</a>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Post Code</th>
+            <th>Lunch</th>
+            <th>Tickets</th>
+            <th>Campus</th>
+            <th>Sub Total</th>
+            <th>Tax</th>
+            <th>Total</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </thead>
+        <tbody>
+            <% for (var x of ordersKey) 
+            {
+            %>
+                <tr>
+                    <td> <%= x.name %> </td>
+                    <td> <%= x.email %> </td>
+                    <td> <%= x.phone %> </td>
+                    <td> <%= x.postcode %> </td>
+                    <td> <%= x.lunch %> </td>
+                    <td> <%= x.tickets %> </td>
+                    <td> <%= x.campus %> </td>
+                    <td> $<%= x.subTotal%> </td>
+                    <td> $<%= x.tax%> </td>
+                    <td> $<%= x.total%> </td>
+                    <td><a href="/delete/<%= x._id %>">Delete</a></td>
+                    <td><a href="/edit/<%= x._id %>">Edit</a></td>
+                </tr>
+            <%
+            }
+            %>
+        </tbody>
+    </table>
+</section>
+</body>
+<%- include('layouts/footer'); -%>

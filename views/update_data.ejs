@@ -1,0 +1,67 @@
+<%- include('layouts/header'); -%>
+<%- include('layouts/nav'); -%>
+<body>
+  
+    <section class="products" id="products">
+
+        <h1 class="heading"> Popular <span>Places</span> </h1>
+        <div class="box-container">
+            <% for (var i = 0; i < ordersKey.length; i++) { %>
+              <div class="box">
+                <span class="discount">-10%</span>
+                <div class="image">
+                  <img src="css/images/img-<%= i + 1 %>.jfif" alt="">
+                  <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Visit Us</a>
+                    <a href="#" class="fas fa-share"></a>
+                  </div>
+                </div>
+                <div class="content">
+                  <h3><%= ordersKey[i].des_name %></h3>
+                  
+                  <div class="price">$<%= ordersKey[i].des_price %> <span>$125.75</span></div>
+                  
+                    <a href="/delete/<%= ordersKey[i]._id %>" class="btn">Delete Destination</a>
+                    <a href="/edit/<%= ordersKey[i]._id %>" class="btn">Edit Destinations</a>
+                </div>
+              </div>
+            <% } %>
+          </div>
+           
+    
+
+
+
+   <section class="contact">
+    <a href="/logout">Logout</a>
+    
+    <table>
+        <thead>
+            <th>Destination name</th>
+            <th>Price</th>
+            <th>Nav Title3</th>
+            <th>Post</th>
+            
+        </thead>
+        <tbody>
+            <% for (var x of ordersKey) 
+            {
+            %>
+                <tr>
+                    <td> <%= x.des_name %> </td>
+                    <td> <%= x.des_price%> </td>
+                    <td> <%= x.nav3 %> </td>
+                    <td> <%= x.post %></td>
+
+                    <td><a href="/delete/<%= x._id %>">Delete</a></td>
+                    <td><a href="/edit/<%= x._id %>">Edit</a></td>
+                </tr>
+            <%
+            }
+            %>
+        </tbody>
+    </table>
+</section>
+</body>
+<%- include('layouts/footer'); -%>

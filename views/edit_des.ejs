@@ -1,0 +1,14 @@
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/nav'); -%>
+  <section class="w50">
+    <form name="myform" method="Post" onsubmit="return formSubmit();"  action="" >
+      <label>Name</label>
+      <input id="des_name" placeholder="destination name" type="text" name="des_name" value="<%= destination.des_name %>"><br/>
+
+      <label>Price</label>
+      <input id="des_price" placeholder="price" type="text" name="des_price"  value="<%= destination.des_price %>"><br/>
+
+      
+</body>
+<%- include('layouts/footer'); -%>

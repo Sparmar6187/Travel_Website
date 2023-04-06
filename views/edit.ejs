@@ -1,0 +1,33 @@
+
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/nav'); -%>
+  <section class="w50">
+    <form name="myform" method="Post" onsubmit="return formSubmit();"  action="" >
+      <label>Destination</label>
+      <input id="des_name" placeholder="destination" type="text" name="des_name" value="<%= order.des_name %>"><br/>
+
+      <label>Price</label>
+      <input id="des_price" placeholder="price" type="text" name="des_price"  value="<%= order.des_price %>"><br/>
+
+      
+      <br/><br/>
+      <input type="submit" value="Update">
+      <p id="errors">
+        <% 
+      if (typeof(errors) != 'undefined')
+      {
+        for (let error of errors)
+        {
+    %>
+          <p class="errors"> <%= error.msg %></p>
+    <%
+        }
+      }
+    %>
+      </p>
+    </form>  
+</section>
+<div class="clear"></div>
+</body>
+<%- include('layouts/footer'); -%>
